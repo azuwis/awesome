@@ -133,6 +133,15 @@ function label.all(t, args)
                 break
             end
         end
+    else
+        local cls = t:clients()
+        for k, c in pairs(cls) do
+            if c.urgent then
+                if bg_urgent then bg_color = bg_urgent end
+                if fg_urgent then fg_color = fg_urgent end
+                break
+            end
+        end
     end
     if not tag.getproperty(t, "icon_only") then
         if fg_color then
