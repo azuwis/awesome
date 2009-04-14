@@ -280,7 +280,6 @@ function notify(args)
     local fg = args.fg or config.fg or (args.preset and args.preset.fg) or config.presets.normal.fg or beautiful.fg_normal or '#ffffff'
     local bg = args.bg or config.bg or (args.preset and args.preset.bg) or config.presets.normal.bg or beautiful.bg_normal or '#535d6c'
     local border_color = (args.preset and args.preset.border_color) or config.presets.normal.border_color or beautiful.bg_focus or '#535d6c'
-    local opacity = args.opacity or config.opacity or (args.preset and args.preset.opacity) or config.presets.normal.opacity or 1
     local notification = {}
 
     -- replace notification if needed
@@ -386,9 +385,6 @@ function notify(args)
     notification.box.ontop = ontop
     notification.box.opacity = opacity
     notification.box.screen = screen
-
-    -- set opacity
-    notification.box.opacity = opacity
 
     -- populate widgets
     notification.box.widgets = { iconbox, textbox }
